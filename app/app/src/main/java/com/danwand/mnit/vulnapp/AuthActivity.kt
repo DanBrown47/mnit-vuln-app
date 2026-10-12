@@ -1,4 +1,4 @@
-package in.danwand.mnit.vulnapp
+package com.danwand.mnit.vulnapp
 
 import android.content.Intent
 import android.os.Bundle

@@ -3,10 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 android {
-    namespace 'in.danwand.mnit.vulnapp'
+    namespace 'com.danwand.mnit.vulnapp'
     compileSdk 34
     defaultConfig {
-        applicationId 'in.danwand.mnit.vulnapp'
+        applicationId 'com.danwand.mnit.vulnapp'
         minSdk 24
         targetSdk 34
         versionCode 1
