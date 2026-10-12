@@ -18,7 +18,8 @@ def create_app(db_path=None):
     @app.get("/api/users")
     @require_token
     def api_users():
-        return jsonify(users=[])
+        rows = db.list_users(app.config["DB_PATH"])
+        return jsonify(users=[{"id": r["id"], "username": r["username"]} for r in rows])
 
     @app.post("/api/register")
     @require_token
