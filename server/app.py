@@ -10,6 +10,13 @@ def create_app(db_path=None):
     def health():
         return jsonify(status="ok")
 
+    from auth import require_token
+
+    @app.get("/api/users")
+    @require_token
+    def api_users():
+        return jsonify(users=[])
+
     return app
 
 
