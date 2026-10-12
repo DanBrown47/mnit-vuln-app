@@ -7,3 +7,9 @@ server/*.db
 app/local.properties
 **/build/
 .gradle/
+
+# python
+**/.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
