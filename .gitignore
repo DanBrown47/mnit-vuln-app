@@ -18,3 +18,6 @@ app/local.properties
 app/local.properties
 app/.gradle/
 app/app/build/
+
+# sdd scratch
+.superpowers/
