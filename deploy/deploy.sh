@@ -16,11 +16,12 @@ run "ss -ltnp | grep -E ':(80|443|8099) ' || true; systemctl is-active nginx || 
 
 echo "[*] upload server/ to /opt/mnit-vulnapp/server/"
 run "mkdir -p /opt/mnit-vulnapp"
+EXCL="--exclude=.venv --exclude=__pycache__ --exclude=.pytest_cache --exclude=*.db"
 if [ -n "${VPS_PASS:-}" ]; then
-    sshpass -e rsync -az --delete -e "ssh $SSHOPTS" \
+    sshpass -e rsync -az --delete $EXCL -e "ssh $SSHOPTS" \
         "$(dirname "$0")/../server/" root@"$HOST":/opt/mnit-vulnapp/server/
 else
-    rsync -az --delete -e "ssh $SSHOPTS" \
+    rsync -az --delete $EXCL -e "ssh $SSHOPTS" \
         "$(dirname "$0")/../server/" root@"$HOST":/opt/mnit-vulnapp/server/
 fi
 # also copy deploy/ so the unit file is on the box

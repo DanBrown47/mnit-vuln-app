@@ -66,12 +66,14 @@ certbot certificates                   # confirm only android.danwand.in changed
 
 ## 5. Teardown cron — stop ONLY this service at session end
 
-Set the time to **server-local 23:00 on 2026-10-14** (adjust from `timedatectl`).
-Append, never overwrite root's crontab:
+The service's clock is **UTC**. 11:00 PM IST on 2026-10-14 is **17:30 UTC**, so
+the cron minute/hour is `30 17` (see `deploy/teardown.cron`). If the box is in a
+different timezone, recompute from `timedatectl`. Append, never overwrite root's
+crontab:
 
 ```bash
 ( crontab -l 2>/dev/null; \
-  echo '0 23 14 10 * systemctl stop mnit-vulnapp.service && systemctl disable mnit-vulnapp.service' ) | crontab -
+  echo '30 17 14 10 * systemctl stop mnit-vulnapp.service && systemctl disable mnit-vulnapp.service' ) | crontab -
 crontab -l
 ```
 
