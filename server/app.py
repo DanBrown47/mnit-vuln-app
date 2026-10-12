@@ -44,6 +44,40 @@ def create_app(db_path=None):
             return jsonify(error="invalid credentials"), 401
         return jsonify(user_id=row["id"])
 
+    def caller_id():
+        raw = request.headers.get("X-User-Id")
+        if raw is None:
+            return None
+        try:
+            return int(raw)
+        except ValueError:
+            return None
+
+    @app.get("/api/tea")
+    @require_token
+    def api_get_tea():
+        uid = caller_id()
+        if uid is None:
+            return jsonify(error="X-User-Id required"), 400
+        # INTENTIONAL VULN: trusts X-User-Id, no check the caller owns it.
+        rows = db.list_tea_for(app.config["DB_PATH"], uid)
+        return jsonify(tea=[dict(r) for r in rows])
+
+    @app.post("/api/tea")
+    @require_token
+    def api_post_tea():
+        uid = caller_id()
+        if uid is None:
+            return jsonify(error="X-User-Id required"), 400
+        data = request.get_json(silent=True) or {}
+        to_user_id, body = data.get("to_user_id"), data.get("body")
+        if not isinstance(to_user_id, int) or not body:
+            return jsonify(error="to_user_id (int) and body required"), 400
+        if not db.user_exists(app.config["DB_PATH"], to_user_id):
+            return jsonify(error="recipient not found"), 400
+        db.add_tea(app.config["DB_PATH"], uid, to_user_id, body)
+        return jsonify(status="sent"), 201
+
     return app
 
 
