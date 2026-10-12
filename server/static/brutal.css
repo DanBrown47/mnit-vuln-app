@@ -1,0 +1,10 @@
+:root{--ink:#0B0B0C;--paper:#EDE7DC;--oxblood:#8A1C1C;--crimson:#C0271E;--blush:#E9D6D1;--electric:#2A2DF0}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:"Courier New",monospace;padding:24px}
+.heading{background:var(--ink);color:var(--paper);border:4px solid var(--ink);
+  box-shadow:10px 10px 0 var(--oxblood);padding:18px 22px;font-weight:900;
+  letter-spacing:2px;text-transform:uppercase;font-size:clamp(20px,5vw,40px)}
+.block{background:var(--blush);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);
+  padding:18px;margin-top:24px;max-width:720px}
+.warn{color:var(--oxblood);font-weight:900;text-transform:uppercase}
+a{color:var(--electric)}

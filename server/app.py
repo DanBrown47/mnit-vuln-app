@@ -1,10 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 import config
 
 
 def create_app(db_path=None):
     app = Flask(__name__)
     app.config["DB_PATH"] = db_path or config.DEFAULT_DB_PATH
+
+    @app.get("/")
+    def index():
+        return render_template("index.html", heading=config.HEADING)
 
     @app.get("/health")
     def health():

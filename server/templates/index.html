@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MNIT Vuln App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='brutal.css') }}"></head>
+<body>
+  <div class="heading">{{ heading }}</div>
+  <div class="block">
+    <p class="warn">Intentionally vulnerable.</p>
+    <p>Authorized MNIT training target only. API under <code>/api</code>.</p>
+  </div>
+</body></html>
