@@ -13,3 +13,8 @@ app/local.properties
 **/__pycache__/
 *.pyc
 .pytest_cache/
+
+# android
+app/local.properties
+app/.gradle/
+app/app/build/

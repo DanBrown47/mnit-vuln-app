@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:label="MNIT Vuln App"
+        android:theme="@style/Theme.MnitVuln">
+        <activity android:name=".AuthActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".UsersActivity" android:exported="false"/>
+        <activity android:name=".MyTeaActivity" android:exported="true"/>  <!-- intentional: exported, no guard -->
+        <activity android:name=".SendTeaActivity" android:exported="false"/>
+    </application>
+</manifest>
