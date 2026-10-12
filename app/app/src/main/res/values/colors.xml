@@ -5,4 +5,23 @@
     <color name="crimson">#C0271E</color>
     <color name="blush">#E9D6D1</color>
     <color name="electric">#2A2DF0</color>
+
+    <!-- professional colorful theme -->
+    <color name="gradientStart">#4F46E5</color>
+    <color name="gradientMid">#7C3AED</color>
+    <color name="gradientEnd">#06B6D4</color>
+    <color name="gradientStartDark">#3730A3</color>
+    <color name="badgeOverlay">#33FFFFFF</color>
+    <color name="surfaceWhite">#FFFFFF</color>
+    <color name="surfaceMuted">#F3F4F6</color>
+    <color name="strokeLight">#E5E7EB</color>
+    <color name="textPrimary">#111827</color>
+    <color name="textSecondary">#6B7280</color>
+    <color name="accentWarm">#F59E0B</color>
+    <color name="successGreen">#10B981</color>
+    <color name="avatar1">#4F46E5</color>
+    <color name="avatar2">#06B6D4</color>
+    <color name="avatar3">#F59E0B</color>
+    <color name="avatar4">#10B981</color>
+    <color name="avatar5">#EC4899</color>
 </resources>

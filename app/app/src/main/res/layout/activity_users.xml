@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="20dp"
-    android:background="@color/paper"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient_screen"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
     <TextView android:text="@string/heading"
-        android:background="@color/ink" android:textColor="@color/paper"
-        android:textStyle="bold" android:textSize="22sp" android:padding="16dp"
-        android:letterSpacing="0.1"
-        android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <TextView android:text="USERS — tap to send tea"
-        android:textColor="@color/oxblood" android:textStyle="bold"
-        android:layout_marginTop="16dp" android:layout_marginBottom="8dp"
-        android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <Button android:id="@+id/my_tea" android:text="My Tea"
-        android:backgroundTint="@color/oxblood"
-        android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <ListView android:id="@+id/list" android:layout_marginTop="12dp"
-        android:layout_width="match_parent" android:layout_height="match_parent"/>
+        android:background="@drawable/bg_badge_pill" android:textColor="@color/surfaceWhite"
+        android:textStyle="bold" android:textSize="12sp" android:letterSpacing="0.08"
+        android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+        android:layout_marginTop="28dp" android:layout_marginStart="24dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <TextView android:text="@string/app_title"
+        android:textColor="@color/surfaceWhite" android:textStyle="bold" android:textSize="30sp"
+        android:layout_marginStart="24dp" android:layout_marginTop="16dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:text="@string/users_subtitle"
+        android:textColor="@color/badgeOverlay" android:textSize="14sp"
+        android:layout_marginStart="24dp" android:layout_marginTop="2dp" android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:layout_marginHorizontal="16dp" android:layout_marginBottom="20dp"
+        app:cardCornerRadius="24dp" app:cardElevation="12dp" app:cardBackgroundColor="@color/surfaceWhite">
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <ListView android:id="@+id/list"
+                android:divider="@null" android:dividerHeight="0dp"
+                android:clipToPadding="false" android:paddingTop="8dp" android:paddingBottom="8dp"
+                android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/my_tea" android:text="@string/my_tea_label"
+                app:cornerRadius="14dp" app:backgroundTint="@color/gradientMid"
+                app:icon="@android:drawable/ic_dialog_email" app:iconTint="@color/surfaceWhite"
+                android:textSize="15sp"
+                android:layout_margin="16dp" android:paddingVertical="8dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

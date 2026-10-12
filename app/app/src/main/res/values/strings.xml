@@ -3,4 +3,17 @@
     <string name="heading">for MNIT Use - Vuln App</string>
     <string name="base_url">https://android.danwand.in</string>
     <string name="api_token">mnit_app_2026_bearer_9f3c1a</string>
+
+    <string name="app_title">Tea</string>
+    <string name="tagline">Say it over tea</string>
+    <string name="users_subtitle">People — tap a name to send tea</string>
+    <string name="my_tea_label">My Tea</string>
+    <string name="my_tea_subtitle">Messages sent to you</string>
+    <string name="sending_to">Sending to</string>
+    <string name="message_hint">Write your tea…</string>
+    <string name="send_tea">Send Tea</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
 </resources>

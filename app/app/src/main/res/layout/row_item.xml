@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/row_text"
-    android:padding="14dp" android:textColor="@color/ink" android:textSize="16sp"
-    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingHorizontal="16dp" android:paddingVertical="12dp"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <TextView android:id="@+id/row_avatar"
+        android:background="@drawable/bg_avatar_circle"
+        android:textColor="@color/surfaceWhite" android:textStyle="bold" android:textSize="15sp"
+        android:gravity="center" android:text="?"
+        android:layout_width="40dp" android:layout_height="40dp"/>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_marginStart="14dp"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+
+        <TextView android:id="@+id/row_title"
+            android:textColor="@color/textPrimary" android:textStyle="bold" android:textSize="16sp"
+            android:maxLines="1" android:ellipsize="end"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <TextView android:id="@+id/row_subtitle"
+            android:textColor="@color/textSecondary" android:textSize="13sp"
+            android:layout_marginTop="2dp" android:maxLines="3" android:ellipsize="end"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

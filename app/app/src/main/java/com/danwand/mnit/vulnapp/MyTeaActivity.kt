@@ -1,7 +1,6 @@
 package com.danwand.mnit.vulnapp
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,12 +10,24 @@ class MyTeaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_tea)
         val store = Store(this)
         val list = findViewById<ListView>(R.id.list)
-        Api(this).tea(store.userId) { arr ->
-            val rows = ArrayList<String>()
-            if (arr != null) for (i in 0 until arr.length())
-                rows.add(arr.getJSONObject(i).getString("body"))
-            runOnUiThread {
-                list.adapter = ArrayAdapter(this, R.layout.row_item, R.id.row_text, rows)
+        val api = Api(this)
+
+        api.users { usersArr ->
+            val names = HashMap<Int, String>()
+            if (usersArr != null) for (i in 0 until usersArr.length()) {
+                val o = usersArr.getJSONObject(i)
+                names[o.getInt("id")] = o.getString("username")
+            }
+            api.tea(store.userId) { teaArr ->
+                val rows = ArrayList<Row>()
+                if (teaArr != null) for (i in 0 until teaArr.length()) {
+                    val o = teaArr.getJSONObject(i)
+                    val fromId = o.getInt("from_user_id")
+                    val fromName = names[fromId] ?: "user #$fromId"
+                    rows.add(Row(fromName.take(1).uppercase(),
+                        "From $fromName", o.getString("body")))
+                }
+                runOnUiThread { list.adapter = RowAdapter(this, rows) }
             }
         }
     }

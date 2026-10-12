@@ -1,7 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.MnitVuln" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:colorBackground">@color/paper</item>
-        <item name="colorPrimary">@color/ink</item>
-        <item name="colorAccent">@color/oxblood</item>
+        <item name="android:colorBackground">@color/surfaceMuted</item>
+        <item name="colorPrimary">@color/gradientStart</item>
+        <item name="colorPrimaryDark">@color/gradientStartDark</item>
+        <item name="colorAccent">@color/gradientEnd</item>
+        <item name="android:statusBarColor">@color/gradientStartDark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
     </style>
 </resources>
