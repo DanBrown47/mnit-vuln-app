@@ -1,0 +1,9 @@
+# secrets / local
+.env
+*.pem
+*.key
+deploy/secrets*
+server/*.db
+app/local.properties
+**/build/
+.gradle/
