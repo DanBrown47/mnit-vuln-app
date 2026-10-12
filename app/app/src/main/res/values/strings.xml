@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MNIT Vuln App</string>
+    <string name="heading">for MNIT Use - Vuln App</string>
+    <string name="base_url">https://android.danwand.in</string>
+    <string name="api_token">mnit_app_2026_bearer_9f3c1a</string>
+</resources>

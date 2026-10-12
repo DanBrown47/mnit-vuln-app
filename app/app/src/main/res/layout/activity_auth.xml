@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="20dp"
+    android:background="@color/paper"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:text="@string/heading"
+        android:background="@color/ink" android:textColor="@color/paper"
+        android:textStyle="bold" android:textSize="22sp" android:padding="16dp"
+        android:letterSpacing="0.1"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/username" android:hint="username"
+        android:layout_marginTop="20dp" android:autofillHints="username"
+        android:inputType="text"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/password" android:hint="password"
+        android:inputType="textPassword" android:autofillHints="password"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/register" android:text="Register"
+        android:backgroundTint="@color/oxblood" android:layout_marginTop="16dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/login" android:text="Login"
+        android:backgroundTint="@color/ink" android:layout_marginTop="8dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

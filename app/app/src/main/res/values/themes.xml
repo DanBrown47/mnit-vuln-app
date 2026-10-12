@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.MnitVuln" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorBackground">@color/paper</item>
+        <item name="colorPrimary">@color/ink</item>
+        <item name="colorAccent">@color/oxblood</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="20dp"
+    android:background="@color/paper"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:text="@string/heading"
+        android:background="@color/ink" android:textColor="@color/paper"
+        android:textStyle="bold" android:textSize="22sp" android:padding="16dp"
+        android:letterSpacing="0.1"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/recipient" android:hint="recipient user id"
+        android:inputType="number" android:layout_marginTop="20dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/body" android:hint="your tea..."
+        android:inputType="textMultiLine" android:minLines="3"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/send" android:text="Send Tea"
+        android:backgroundTint="@color/oxblood" android:layout_marginTop="16dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
