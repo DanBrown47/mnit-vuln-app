@@ -1,3 +1,3 @@
 # m h dom mon dow command  -- stop ONLY the vuln service at session end
-# Placeholder time; deploy sets this to server-local 23:00 on 2026-10-14.
-0 23 14 10 * systemctl stop mnit-vulnapp.service && systemctl disable mnit-vulnapp.service
+# 11:00 PM IST on 2026-10-14 == 17:30 UTC (server runs UTC). Installed value:
+30 17 14 10 * systemctl stop mnit-vulnapp.service && systemctl disable mnit-vulnapp.service
